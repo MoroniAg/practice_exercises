@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 import com.cumorahcenter.exercise_01.HulaHoop;
 import com.cumorahcenter.exercise_02.FindNeedle;
 import com.cumorahcenter.exercise_03.TotalPoints;
+import com.cumorahcenter.exercise_04.DnaStrand;
 import org.junit.Test;
 
 /**
@@ -91,4 +92,12 @@ public class AppTest {
 					 TotalPoints.points(new String[]{"1:0" , "2:0" , "3:0" , "4:4" , "2:2" , "3:3" , "1:4" , "2:3" , "2:4" , "3:4"}));
 		
 	}
+	@Test
+	public void testDnaStrand() {
+		
+		assertEquals("TTTT", DnaStrand.makeComplement("AAAA"));
+		assertEquals("TAACG", DnaStrand.makeComplement("ATTGC"));
+		assertEquals("CATA", DnaStrand.makeComplement("GTAT"));
+	}
+	
 }
