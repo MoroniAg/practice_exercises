@@ -8,6 +8,8 @@ import com.cumorahcenter.month_01.week_02.CharProblem;
 import com.cumorahcenter.month_01.week_02.Digitize;
 import com.cumorahcenter.month_01.week_02.HelloWorld;
 import com.cumorahcenter.month_01.week_02.HighAndLow;
+import com.cumorahcenter.month_01.weel_03.Alarm;
+import com.cumorahcenter.month_01.weel_03.Welcome;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -170,5 +172,20 @@ public class AppTest {
 	public void testDigitize() {
 		assertArrayEquals(new int[]{1 , 3 , 2 , 5 , 3} , Digitize.digitize(35231));
 		assertArrayEquals(new int[]{0} , Digitize.digitize(0));
+	}
+	
+	@Test
+	public void setAlarmTest() {
+		assertTrue("Should be true.", Alarm.setAlarm(true, false));
+		assertFalse("Should be false.", Alarm.setAlarm(true, true));
+		assertFalse("Should be false.", Alarm.setAlarm(false, false));
+		assertFalse("Should be false.", Alarm.setAlarm(false, true));
+	}
+	
+	@Test
+	public void exampleTest() {
+		assertEquals("Your function should have returned 'Welcome'. Try again.", "Welcome", Welcome.greet("english"));
+		assertEquals("Your function should have returned 'Welkom'. Try again.", "Welkom", Welcome.greet("dutch"));
+		assertEquals("Your function should have returned 'Welcome'. Try again.", "Welcome", Welcome.greet("IP_ADDRESS_INVALID"));
 	}
 }
