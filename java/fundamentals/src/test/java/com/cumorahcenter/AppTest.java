@@ -1,13 +1,13 @@
 package com.cumorahcenter;
 
-import com.cumorahcenter.exercise_01.HulaHoop;
-import com.cumorahcenter.exercise_02.FindNeedle;
-import com.cumorahcenter.exercise_03.TotalPoints;
-import com.cumorahcenter.exercise_04.DnaStrand;
-import com.cumorahcenter.exercise_05.CharProblem;
-import com.cumorahcenter.exercise_05.Digitize;
-import com.cumorahcenter.exercise_05.HelloWorld;
-import com.cumorahcenter.exercise_05.HighAndLow;
+import com.cumorahcenter.month_01.week_01.HulaHoop;
+import com.cumorahcenter.month_01.week_01.FindNeedle;
+import com.cumorahcenter.month_01.week_01.TotalPoints;
+import com.cumorahcenter.month_01.week_01.DnaStrand;
+import com.cumorahcenter.month_01.week_02.CharProblem;
+import com.cumorahcenter.month_01.week_02.Digitize;
+import com.cumorahcenter.month_01.week_02.HelloWorld;
+import com.cumorahcenter.month_01.week_02.HighAndLow;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

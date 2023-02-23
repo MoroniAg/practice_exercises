@@ -1,7 +1,6 @@
-package com.cumorahcenter.exercise_05;
+package com.cumorahcenter.month_01.week_02;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 /**
  * Created by Gabriel Aguilera on 2/22/23

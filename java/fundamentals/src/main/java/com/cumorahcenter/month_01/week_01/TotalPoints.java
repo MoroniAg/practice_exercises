@@ -1,4 +1,4 @@
-package com.cumorahcenter.exercise_03;
+package com.cumorahcenter.month_01.week_01;
 
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;

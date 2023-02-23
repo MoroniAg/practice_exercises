@@ -1,4 +1,4 @@
-package com.cumorahcenter.exercise_04;
+package com.cumorahcenter.month_01.week_01;
 
 /**
  * Created by Gabriel Aguilera on 2/21/23

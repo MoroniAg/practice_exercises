@@ -1,12 +1,7 @@
-package com.cumorahcenter.exercise_05;
+package com.cumorahcenter.month_01.week_02;
 
-import javax.swing.*;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.LongStream;
 
 /**
  * Created by Gabriel Aguilera on 2/22/23
