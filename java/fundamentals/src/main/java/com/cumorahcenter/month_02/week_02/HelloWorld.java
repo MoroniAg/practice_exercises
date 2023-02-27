@@ -1,4 +1,4 @@
-package com.cumorahcenter.month_01.week_02;
+package com.cumorahcenter.month_02.week_02;
 
 /**
  * Created by Gabriel Aguilera on 2/22/23

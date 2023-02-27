@@ -1,17 +1,17 @@
 package com.cumorahcenter;
 
-import com.cumorahcenter.month_01.week_01.HulaHoop;
-import com.cumorahcenter.month_01.week_01.FindNeedle;
-import com.cumorahcenter.month_01.week_01.TotalPoints;
-import com.cumorahcenter.month_01.week_01.DnaStrand;
-import com.cumorahcenter.month_01.week_02.CharProblem;
-import com.cumorahcenter.month_01.week_02.Digitize;
-import com.cumorahcenter.month_01.week_02.HelloWorld;
-import com.cumorahcenter.month_01.week_02.HighAndLow;
-import com.cumorahcenter.month_01.weel_03.Alarm;
-import com.cumorahcenter.month_01.weel_03.MakeNegative;
-import com.cumorahcenter.month_01.weel_03.MinMax;
-import com.cumorahcenter.month_01.weel_03.Welcome;
+import com.cumorahcenter.month_02.week_01.HulaHoop;
+import com.cumorahcenter.month_02.week_01.FindNeedle;
+import com.cumorahcenter.month_02.week_01.TotalPoints;
+import com.cumorahcenter.month_02.week_01.DnaStrand;
+import com.cumorahcenter.month_02.week_02.CharProblem;
+import com.cumorahcenter.month_02.week_02.Digitize;
+import com.cumorahcenter.month_02.week_02.HelloWorld;
+import com.cumorahcenter.month_02.week_02.HighAndLow;
+import com.cumorahcenter.month_02.week_03.Alarm;
+import com.cumorahcenter.month_02.week_03.MakeNegative;
+import com.cumorahcenter.month_02.week_03.MinMax;
+import com.cumorahcenter.month_02.week_03.Welcome;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

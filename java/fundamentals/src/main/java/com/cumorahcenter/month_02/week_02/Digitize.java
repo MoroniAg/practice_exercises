@@ -1,4 +1,4 @@
-package com.cumorahcenter.month_01.week_02;
+package com.cumorahcenter.month_02.week_02;
 
 import java.util.Collections;
 import java.util.stream.Collectors;
