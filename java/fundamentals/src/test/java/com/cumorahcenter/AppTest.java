@@ -14,6 +14,7 @@ import com.cumorahcenter.month_02.week_03.MinMax;
 import com.cumorahcenter.month_02.week_03.Welcome;
 import com.cumorahcenter.month_02.week_04.RentCarCost;
 import com.cumorahcenter.month_02.week_04.Square;
+import com.cumorahcenter.month_02.week_04.FormulasPolygons;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -227,5 +228,20 @@ public class AppTest {
 		assertEquals(270 , RentCarCost.rentalCarCost(8));
 		assertEquals(310 , RentCarCost.rentalCarCost(9));
 		assertEquals(350 , RentCarCost.rentalCarCost(10));
+	}
+	
+	private static final double delta = 0.0001;
+	
+	@Test
+	public void examples() {
+		// assertEquals("expected", "actual");
+		assertEquals(4, FormulasPolygons.getVolumeOfCuboid(1, 2, 2), delta);
+		assertEquals(63, FormulasPolygons.getVolumeOfCuboid(6.3, 2, 5), delta);
+	}
+	
+	@Test
+	public void testSomething() {
+		assertEquals(16, FormulasPolygons.areaOrPerimeter(4 , 4));
+		assertEquals(32, FormulasPolygons.areaOrPerimeter(6 , 10));
 	}
 }
