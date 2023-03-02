@@ -12,6 +12,9 @@ import com.cumorahcenter.month_02.week_03.Alarm;
 import com.cumorahcenter.month_02.week_03.MakeNegative;
 import com.cumorahcenter.month_02.week_03.MinMax;
 import com.cumorahcenter.month_02.week_03.Welcome;
+import com.cumorahcenter.month_02.week_04.RentCarCost;
+import com.cumorahcenter.month_02.week_04.Square;
+import com.cumorahcenter.month_02.week_04.FormulasPolygons;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -178,28 +181,67 @@ public class AppTest {
 	
 	@Test
 	public void setAlarmTest() {
-		assertTrue("Should be true.", Alarm.setAlarm(true, false));
-		assertFalse("Should be false.", Alarm.setAlarm(true, true));
-		assertFalse("Should be false.", Alarm.setAlarm(false, false));
-		assertFalse("Should be false.", Alarm.setAlarm(false, true));
+		assertTrue("Should be true." , Alarm.setAlarm(true , false));
+		assertFalse("Should be false." , Alarm.setAlarm(true , true));
+		assertFalse("Should be false." , Alarm.setAlarm(false , false));
+		assertFalse("Should be false." , Alarm.setAlarm(false , true));
 	}
 	
 	@Test
 	public void exampleTest() {
-		assertEquals("Your function should have returned 'Welcome'. Try again.", "Welcome", Welcome.greet("english"));
-		assertEquals("Your function should have returned 'Welkom'. Try again.", "Welkom", Welcome.greet("dutch"));
-		assertEquals("Your function should have returned 'Welcome'. Try again.", "Welcome", Welcome.greet("IP_ADDRESS_INVALID"));
+		assertEquals("Your function should have returned 'Welcome'. Try again." ,
+					 "Welcome" ,
+					 Welcome.greet("english"));
+		assertEquals("Your function should have returned 'Welkom'. Try again." ,
+					 "Welkom" ,
+					 Welcome.greet("dutch"));
+		assertEquals("Your function should have returned 'Welcome'. Try again." ,
+					 "Welcome" ,
+					 Welcome.greet("IP_ADDRESS_INVALID"));
 	}
 	
 	@Test
 	public void testMakeNegative() {
-		assertEquals(-42, MakeNegative.makeNegative(42));
+		assertEquals(-42 , MakeNegative.makeNegative(42));
 	}
 	
 	@Test
 	public void testExampleCases() {
-		assertArrayEquals(new int[]{1,5}, MinMax.minMax(new int[]{1,2,3,4,5}));
-		assertArrayEquals(new int[]{5, 2334454}, MinMax.minMax(new int[]{2334454,5}));
-		assertArrayEquals(new int[]{1, 1}, MinMax.minMax(new int[]{1}));
+		assertArrayEquals(new int[]{1 , 5} , MinMax.minMax(new int[]{1 , 2 , 3 , 4 , 5}));
+		assertArrayEquals(new int[]{5 , 2334454} , MinMax.minMax(new int[]{2334454 , 5}));
+		assertArrayEquals(new int[]{1 , 1} , MinMax.minMax(new int[]{1}));
+	}
+	
+	@Test
+	public void shouldWorkForSomeExamples() throws Exception {
+		assertEquals("negative numbers aren't square numbers" , false , Square.isSquare(-1));
+		assertEquals("0 is a square number (0 * 0)" , true , Square.isSquare(0));
+		assertEquals("3 isn't a square number" , false , Square.isSquare(3));
+		assertEquals("4 is a square number (2 * 2)" , true , Square.isSquare(4));
+		assertEquals("25 is a square number (5 * 5)" , true , Square.isSquare(25));
+		assertEquals("26 isn't a square number" , false , Square.isSquare(26));
+	}
+	
+	@Test
+	public void over7Tests() {
+		assertEquals(230 , RentCarCost.rentalCarCost(7));
+		assertEquals(270 , RentCarCost.rentalCarCost(8));
+		assertEquals(310 , RentCarCost.rentalCarCost(9));
+		assertEquals(350 , RentCarCost.rentalCarCost(10));
+	}
+	
+	private static final double delta = 0.0001;
+	
+	@Test
+	public void examples() {
+		// assertEquals("expected", "actual");
+		assertEquals(4, FormulasPolygons.getVolumeOfCuboid(1, 2, 2), delta);
+		assertEquals(63, FormulasPolygons.getVolumeOfCuboid(6.3, 2, 5), delta);
+	}
+	
+	@Test
+	public void testSomething() {
+		assertEquals(16, FormulasPolygons.areaOrPerimeter(4 , 4));
+		assertEquals(32, FormulasPolygons.areaOrPerimeter(6 , 10));
 	}
 }
