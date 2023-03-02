@@ -1,11 +1,18 @@
 package com.cumorahcenter;
 
+import static java.util.Arrays.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.cumorahcenter.month_02.week_05.PigLatin;
 import com.cumorahcenter.month_02.week_05.RgbToHex;
+import com.cumorahcenter.month_03.week_01.TopWords;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * Unit test for simple App.
@@ -33,5 +40,29 @@ public class AppTest {
 		assertEquals("igPay atinlay siay oolcay" , PigLatin.pigIt("Pig latin is cool"));
 		assertEquals("hisTay siay ymay tringsay" , PigLatin.pigIt("This is my string"));
 		assertEquals("elloHay orldway !" , PigLatin.pigIt("Hello world !"));
+	}
+	
+	@Test
+	public void testTopWprd() {
+		assertEquals(asList("e" , "d" , "a") , TopWords.top3("a a a  b  c c  d d d d  e e e e e"));
+		assertEquals(asList("e" , "ddd" , "aa") ,
+					 TopWords.top3("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e"));
+		assertEquals(asList("won't" , "wont") , TopWords.top3("  //wont won't won't "));
+		assertEquals(List.of("e") , TopWords.top3("  , e   .. "));
+		assertEquals(new ArrayList<>() , TopWords.top3("  ...  "));
+		assertEquals(new ArrayList<>() , TopWords.top3("  '  "));
+		assertEquals(new ArrayList<>(), TopWords.top3("  '''  "));
+		StringJoiner joiner = new StringJoiner("\n");
+		for (String s : Arrays.asList(
+				"In a village of La Mancha, the name of which I have no desire to call to" ,
+				"mind, there lived not long since one of those gentlemen that keep a lance" ,
+				"in the lance-rack, an old buckler, a lean hack, and a greyhound for" ,
+				"coursing. An olla of rather more beef than mutton, a salad on most" ,
+				"nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra" ,
+				"on Sundays, made away with three-quarters of his income.")) {
+			joiner.add(s);
+		}
+		assertEquals(asList("a" , "of" , "on") ,
+					 TopWords.top3(joiner.toString()));
 	}
 }
