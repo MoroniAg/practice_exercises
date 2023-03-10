@@ -7,6 +7,7 @@ import com.cumorahcenter.month_02.week_05.PigLatin;
 import com.cumorahcenter.month_02.week_05.RgbToHex;
 import com.cumorahcenter.month_03.week_01.RangeExtraction;
 import com.cumorahcenter.month_03.week_01.TopWords;
+import com.cumorahcenter.month_03.week_02.ConvertToIPv4;
 import com.cumorahcenter.month_03.week_02.PerfectPower;
 import org.junit.Test;
 
@@ -182,6 +183,13 @@ public class AppTest {
 			b *= b;
 		}
 		return p;
+	}
+	
+	@Test
+	public void sampleTest() {
+		assertEquals("128.114.17.104", ConvertToIPv4.longToIP(2154959208L));
+		assertEquals("0.0.0.0", ConvertToIPv4.longToIP(0));
+		assertEquals("128.32.10.1", ConvertToIPv4.longToIP(2149583361L));
 	}
 	
 }
