@@ -1,18 +1,20 @@
 package com.cumorahcenter;
 
 import static java.util.Arrays.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import com.cumorahcenter.month_02.week_05.PigLatin;
 import com.cumorahcenter.month_02.week_05.RgbToHex;
 import com.cumorahcenter.month_03.week_01.RangeExtraction;
 import com.cumorahcenter.month_03.week_01.TopWords;
+import com.cumorahcenter.month_03.week_02.ConvertToIPv4;
+import com.cumorahcenter.month_03.week_02.PerfectPower;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.StringJoiner;
 
 /**
@@ -100,6 +102,94 @@ public class AppTest {
 							 18 ,
 							 19 ,
 							 20}));
+	}
+	
+	@Test
+	public void perfectPower() {
+		assertNull("0 is not a perfect number" , PerfectPower.isPerfectPower(0));
+		assertNull("1 is not a perfect number" , PerfectPower.isPerfectPower(1));
+		assertNull("2 is not a perfect number" , PerfectPower.isPerfectPower(2));
+		assertNull("3 is not a perfect number" , PerfectPower.isPerfectPower(3));
+		assertArrayEquals("4 = 2^2" , new int[]{2 , 2} , PerfectPower.isPerfectPower(4));
+		assertNull("5 is not a perfect power" , PerfectPower.isPerfectPower(5));
+		assertArrayEquals("8 = 2^3" , new int[]{2 , 3} , PerfectPower.isPerfectPower(8));
+		assertArrayEquals("9 = 3^2" , new int[]{3 , 2} , PerfectPower.isPerfectPower(9));
+		
+		
+	}
+	
+	@Test
+	public void testUpTo500() {
+		int[] pp = {4 ,
+				8 ,
+				9 ,
+				16 ,
+				25 ,
+				27 ,
+				32 ,
+				36 ,
+				49 ,
+				64 ,
+				81 ,
+				100 ,
+				121 ,
+				125 ,
+				128 ,
+				144 ,
+				169 ,
+				196 ,
+				216 ,
+				225 ,
+				243 ,
+				256 ,
+				289 ,
+				324 ,
+				343 ,
+				361 ,
+				400 ,
+				441 ,
+				484};
+		for (int i : pp) {
+			assertNotNull(i + " is a perfect power" , PerfectPower.isPerfectPower(i));
+		}
+	}
+	
+	@Test
+	public void testRandomPerfectPowers() {
+		Random rnd = new Random();
+		for (int i = 0; i < 10; i++) {
+			int m = rnd.nextInt(254)+2;
+			int k = (int)(rnd.nextDouble()*(Math.log(Integer.MAX_VALUE)/Math.log(m)-2.0)+2.0);
+			int l = ipow(m, k);
+			int[] r = PerfectPower.isPerfectPower(l);
+			assertNotNull(l+" is a perfect power", r);
+			assertEquals(r[0]+"^"+r[1]+"!="+l, l, ipow(r[0], r[1]));
+		}
+	}
+	
+	@Test
+	public void testRandomNumbers() {
+		Random rnd = new Random();
+		for (int i = 0; i < 1; i++) {
+			int l = rnd.nextInt(Integer.MAX_VALUE);
+			int[] r = PerfectPower.isPerfectPower(l);
+			if (r != null) assertEquals(r[0]+"^"+r[1]+"!="+l, l, ipow(r[0], r[1]));
+		}
+	}
+	private static int ipow(int b, int e) {
+		int p = 1;
+		for (; e > 0; e >>= 1) {
+			if ((e & 1) == 1) p *= b;
+			b *= b;
+		}
+		return p;
+	}
+	
+	@Test
+	public void sampleTest() {
+		assertEquals("128.114.17.104", ConvertToIPv4.longToIP(2154959208L));
+		assertEquals("0.0.0.0", ConvertToIPv4.longToIP(0));
+		assertEquals("128.32.10.1", ConvertToIPv4.longToIP(2149583361L));
 	}
 	
 }
